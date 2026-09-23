@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sunny Sprouts Kindergarten — a joyful place to learn, play, and grow." />
+  <title>Sunny Sprouts Kindergarten</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy:#21375f; --ink:#344564; --yellow:#ffc943; --coral:#ff796a; --mint:#a8dfca; --cream:#fffaf0; --sky:#dff3fb; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Nunito,Arial,sans-serif; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { font-family:"Baloo 2",cursive; color:var(--navy); line-height:1.03; }
+    .container { width:min(1120px,calc(100% - 40px)); margin:auto; }
+    .topbar { background:var(--navy); color:#fff; text-align:center; padding:9px 16px; font-size:.89rem; font-weight:700; }
+    .topbar span { color:var(--yellow); }
+    nav { height:82px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; color:var(--navy); text-decoration:none; font-family:"Baloo 2"; font-weight:800; font-size:1.45rem; }
+    .brand-mark { width:46px; height:46px; border-radius:50% 50% 48% 48%; display:grid; place-items:center; background:var(--yellow); box-shadow:4px 4px 0 #f5ae25; font-size:1.65rem; }
+    .navlinks { display:flex; align-items:center; gap:28px; }
+    .navlinks a { color:var(--navy); font-weight:800; text-decoration:none; }
+    .navlinks a:hover { color:var(--coral); }
+    .button { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:999px; padding:14px 23px; color:var(--navy); background:var(--yellow); box-shadow:0 5px 0 #e6aa26; font:800 1rem Nunito; text-decoration:none; transition:transform .18s,box-shadow .18s; }
+    .button:hover { transform:translateY(2px); box-shadow:0 3px 0 #e6aa26; }
+    .button.coral { background:var(--coral); color:#fff; box-shadow:0 5px 0 #d95b55; }
+    .hero { overflow:hidden; position:relative; min-height:555px; padding:78px 0 64px; background:linear-gradient(110deg,#f1fbf7 0%,#f5fbef 56%,#fff6cc 100%); }
+    .hero:before { content:""; position:absolute; width:300px; height:300px; right:-80px; top:-70px; background:var(--yellow); opacity:.45; border-radius:43% 57% 61% 39% / 37% 40% 60% 63%; }
+    .hero-grid { display:grid; grid-template-columns:1.06fr .94fr; align-items:center; gap:48px; position:relative; }
+    .eyebrow { display:inline-block; padding:8px 14px; border-radius:999px; background:#fff; color:#e17050; font-size:.87rem; font-weight:900; letter-spacing:.04em; }
+    h1 { margin:14px 0 18px; font-size:clamp(3rem,6vw,5.3rem); }
+    h1 em { font-style:normal; color:var(--coral); }
+    .hero p { max-width:550px; font-size:1.14rem; line-height:1.65; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+    .hero-art { position:relative; min-height:382px; }
+    .sun { position:absolute; top:8px; right:31px; width:89px; height:89px; background:var(--yellow); border-radius:50%; box-shadow:0 0 0 11px rgba(255,201,67,.2); }
+    .cloud { position:absolute; width:125px; height:32px; background:#fff; border-radius:30px; left:4px; top:52px; }
+    .cloud:after,.cloud:before { content:""; position:absolute; background:#fff; border-radius:50%; bottom:0; }.cloud:before{width:55px;height:55px;left:22px}.cloud:after{width:40px;height:40px;left:65px}
+    .scene { position:absolute; inset:75px 0 0 7%; border-radius:48% 52% 34% 32%; background:#85d3ac; overflow:hidden; box-shadow:12px 12px 0 rgba(40,102,96,.12); }
+    .hill { position:absolute; bottom:-56px; width:260px; height:175px; border-radius:50% 50% 0 0; background:#5ab98d; }.hill.one{left:-45px}.hill.two{right:-45px;height:220px;background:#6ac59b}
+    .school { position:absolute; bottom:53px; left:29%; width:215px; height:157px; background:#fff8df; border:7px solid var(--navy); border-bottom:0; border-radius:12px 12px 0 0; }
+    .roof { position:absolute; left:-17px; top:-61px; border-left:120px solid transparent; border-right:120px solid transparent; border-bottom:65px solid var(--coral); }
+    .door { position:absolute; width:50px; height:75px; bottom:0; left:78px; background:var(--coral); border:5px solid var(--navy); border-bottom:0; border-radius:26px 26px 0 0; }.window{position:absolute;width:38px;height:38px;top:42px;background:#86d6ee;border:5px solid var(--navy)}.window.left{left:20px}.window.right{right:20px}
+    .tree { position:absolute; bottom:50px; right:20px; width:37px; height:95px; background:#8c633d; border-radius:20px; }.tree:after { content:""; position:absolute; width:115px; height:115px; border-radius:46% 54% 44% 56%; left:-39px; top:-75px; background:#427d5d; box-shadow:20px 9px 0 #57976c; }
+    .section { padding:90px 0; }
+    .heading { max-width:600px; text-align:center; margin:0 auto 42px; }.heading h2{font-size:clamp(2.35rem,4vw,3.4rem);margin-bottom:10px}.heading p{line-height:1.65;margin:0}
+    .programs { background:#fff; }.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }.card { padding:28px; border-radius:24px; min-height:245px; background:var(--sky); }.card:nth-child(2){background:#fff1bd}.card:nth-child(3){background:#ffdcd6}.icon { width:60px;height:60px;display:grid;place-items:center;border-radius:18px;background:#fff;font-size:1.9rem; }.card h3{margin:16px 0 9px;font-size:1.65rem}.card p{line-height:1.55;margin-bottom:0}
+    .about { background:#f4fbf8; }.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:66px;align-items:center}.art-card{position:relative;min-height:350px;background:var(--coral);border-radius:42% 42% 24px 24px;overflow:hidden}.art-card:before{content:"✦  ☀  ✦";position:absolute;top:22px;left:22px;color:#fff4be;font-size:2rem;letter-spacing:19px}.children{position:absolute;bottom:0;left:0;width:100%;height:205px;background:#a6d9c4;border-radius:50% 50% 0 0}.children:after{content:"🧒   👧   🧒";position:absolute;bottom:22px;left:16%;font-size:4.2rem;white-space:nowrap;filter:saturate(.8)}.about h2{font-size:3.25rem;margin-bottom:15px}.about p{line-height:1.68;font-size:1.08rem}.ticks{list-style:none;padding:0;margin:23px 0 0;display:grid;gap:12px;font-weight:800}.ticks li:before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;margin-right:10px;border-radius:50%;background:var(--mint);color:var(--navy)}
+    .visit { padding:73px 0; background:var(--navy); color:#fff; }.visit .container{display:flex;justify-content:space-between;align-items:center;gap:25px}.visit h2{color:#fff;font-size:2.65rem;margin-bottom:5px}.visit p{margin:0;color:#d8e2f1}
+    footer { padding:30px 0; background:#182d51; color:#cad5e7; font-size:.9rem; }.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-row .brand{color:#fff;font-size:1.1rem}.footer-row .brand-mark{width:34px;height:34px;font-size:1.2rem;box-shadow:none}
+    @media(max-width:760px){nav{height:70px}.navlinks{display:none}.hero{padding:58px 0 45px}.hero-grid,.about-grid{grid-template-columns:1fr;gap:40px}.hero-art{min-height:330px}.cards{grid-template-columns:1fr}.section{padding:65px 0}.about h2{font-size:2.65rem}.visit .container,.footer-row{align-items:flex-start;flex-direction:column}.school{left:25%;transform:scale(.85);transform-origin:bottom left}.tree{right:7px}.button{padding:13px 19px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">🌈 Enrolling now for the 2026–27 school year! <span>Book a visit today.</span></div>
+  <header class="container"><nav><a class="brand" href="#home"><span class="brand-mark">☀️</span> Sunny Sprouts</a><div class="navlinks"><a href="#programs">Programs</a><a href="#about">Our story</a><a href="#visit">Contact</a><a class="button" href="#visit">Schedule a Tour</a></div></nav></header>
+  <main>
+    <section class="hero" id="home"><div class="container hero-grid"><div><span class="eyebrow">A LITTLE PLACE FOR BIG DREAMS</span><h1>Learn, laugh &<br><em>grow together.</em></h1><p>A bright and nurturing kindergarten where curious minds explore, create, and make their very first school memories.</p><div class="hero-actions"><a class="button coral" href="#visit">Come visit us</a><a class="button" href="#programs">Explore programs</a></div></div><div class="hero-art" aria-label="Illustration of a cheerful kindergarten school"><div class="sun"></div><div class="cloud"></div><div class="scene"><div class="hill one"></div><div class="hill two"></div><div class="school"><div class="roof"></div><div class="door"></div><div class="window left"></div><div class="window right"></div></div><div class="tree"></div></div></div></div></section>
+    <section class="section programs" id="programs"><div class="container"><div class="heading"><h2>Every day is an adventure.</h2><p>Our playful programs build confidence, kindness, and a lifelong love of learning.</p></div><div class="cards"><article class="card"><div class="icon">🎨</div><h3>Creative play</h3><p>Painting, building, pretending, and discovering through open-ended play.</p></article><article class="card"><div class="icon">📚</div><h3>Ready to learn</h3><p>Stories, sounds, numbers, and hands-on activities made for little learners.</p></article><article class="card"><div class="icon">🌿</div><h3>Outdoor wonder</h3><p>Big backyard adventures that help children move, explore, and connect.</p></article></div></div></section>
+    <section class="section about" id="about"><div class="container about-grid"><div class="art-card" aria-hidden="true"><div class="children"></div></div><div><span class="eyebrow">OUR HAPPY PLACE</span><h2>Small hands.<br>Big hearts.</h2><p>At Sunny Sprouts, every child is seen, celebrated, and encouraged to be wonderfully themselves. Our caring teachers create a safe little community full of curiosity and friendship.</p><ul class="ticks"><li>Warm, experienced educators</li><li>Small groups and individual attention</li><li>Healthy snacks and lots of fresh air</li></ul></div></div></section>
+    <section class="visit" id="visit"><div class="container"><div><h2>Come see the sunshine.</h2><p>We'd love to show you around and meet your family.</p></div><a class="button" href="mailto:hello@sunnysprouts.edu">hello@sunnysprouts.edu&nbsp; →</a></div></section>
+  </main>
+  <footer><div class="container footer-row"><a class="brand" href="#home"><span class="brand-mark">☀️</span> Sunny Sprouts</a><span>123 Rainbow Lane · Mon–Fri, 8am–4pm</span><span>© 2026 Sunny Sprouts Kindergarten</span></div></footer>
+</body>
+</html>
